@@ -1,94 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PING - PONG</title>
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PING - PONG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas> </canvas>
 
-</head>
-<body>
-  
-
-  <canvas>
-
-  </canvas>
-
-  <script>
-    const canvasEl = document.querySelector("canvas"),
-          canvasCtx = canvasEl.getContext("2d");
-          
-          
-
-          function setup(){
-
-            //largura do campo
-
-              canvasEl.width = canvasCtx.width = window.innerWidth
-              canvasEl.height = canvasCtx.height = window.innerHeight
-          }
-
-          function draw(){
-
-            // desenho do campo
-
-              canvasCtx.fillStyle = "#286047"
-              canvasCtx.fillRect(0, 0, window.innerWidth, window.innerHeight)
-              
-            
-            // desenho linha central do campo
-
-            const lineWidth = 10
-
-              canvasCtx.fillStyle = "#ffffff"
-
-              const x = window.innerWidth / 2 - lineWidth / 2
-              const y = 0
-              const w = lineWidth
-              const h = window.innerHeight
-
-              canvasCtx.fillRect(x, y, w, h)
-
-            // desenho raquete esquerda
-
-              const xl = 10
-              const yl = 400
-              const ll = lineWidth
-              const al = 200
-
-            canvasCtx.fillRect(xl, yl, ll, al)
-
-            // desenho raquete direita
-
-              const xr = window.innerWidth - lineWidth - 10
-              const yr = 300
-              const lr = lineWidth
-              const ar = 200
-
-              canvasCtx.fillRect(xr, yr, lr, ar)
-
-
-            // desenho da bola 
-
-              canvasCtx.beginPath()
-              canvasCtx.arc(200, 300, 20, 0, 2 * Math.PI, false)
-              canvasCtx.fill()
-
-            // desenho do placar
-
-              canvasCtx.font = "bold 72px Arial"
-              canvasCtx.textAlign = "center"
-              canvasCtx.textBaseline = "top"
-              canvasCtx.fillStyle = '#c1c1c1'
-              canvasCtx.fillText("3", window.innerWidth / 4, 50)
-              canvasCtx.fillText("3", window.innerWidth / 4 + window.innerWidth / 2, 50)
-            }
-
-    setup()
-    draw()    
-
-
-  </script>
-</body>
+    <script type="text/javascript" src="./canvas.js"></script>
+  </body>
 </html>
